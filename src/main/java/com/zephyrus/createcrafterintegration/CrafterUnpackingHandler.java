@@ -27,8 +27,16 @@ public class CrafterUnpackingHandler implements UnpackingHandler {
         PackageOrderWithCrafts.CraftingEntry craftRecipe = orderContext.orderedCrafts().getFirst();
         List<BigItemStack> itemStacks = orderContext.orderedStacks().stacks();
         Map<Item, BigItemStack> mapping = new HashMap<>();
-        for (BigItemStack stack : itemStacks)
-            mapping.put(stack.stack.getItem(), stack);
+
+        for (ItemStack itemStack : items) {
+            Item item = itemStack.getItem();
+            if (!mapping.containsKey(item)) {
+                BigItemStack stack = new BigItemStack(itemStack);
+                stack.count = 0;
+                mapping.put(item, stack);
+            }
+            mapping.get(item).count += itemStack.getCount();
+        }
 
         if (craftRecipe.count() > 64) return false;
         for (int i = 0; i < handler.getSlots(); i++) {

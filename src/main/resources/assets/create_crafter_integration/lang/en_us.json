@@ -1,0 +1,13 @@
+{
+  "itemGroup.create_crafter_integration": "Example Mod Tab",
+  "block.create_crafter_integration.example_block": "Example Block",
+  "item.create_crafter_integration.example_item": "Example Item",
+
+  "create_crafter_integration.configuration.title": "Create: Crafter Integration Configs",
+  "create_crafter_integration.configuration.section.create_crafter_integration.common.toml": "Create: Crafter Integration Configs",
+  "create_crafter_integration.configuration.section.create_crafter_integration.common.toml.title": "Create: Crafter Integration Configs",
+  "create_crafter_integration.configuration.items": "Item List",
+  "create_crafter_integration.configuration.logDirtBlock": "Log Dirt Block",
+  "create_crafter_integration.configuration.magicNumberIntroduction": "Magic Number Text",
+  "create_crafter_integration.configuration.magicNumber": "Magic Number"
+}

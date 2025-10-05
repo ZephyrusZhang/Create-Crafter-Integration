@@ -22,10 +22,8 @@ public class CrafterUnpackingHandler implements UnpackingHandler {
     @Override
     public boolean unpack(Level level, BlockPos pos, BlockState state, Direction side, List<ItemStack> items, @Nullable PackageOrderWithCrafts orderContext, boolean simulate) {
         if (orderContext.orderedCrafts().isEmpty()) return false;
-        CreateCrafterIntegration.LOGGER.info("testing unpacking handler");
         IItemHandler handler = level.getCapability(Capabilities.ItemHandler.BLOCK, pos, side);
         PackageOrderWithCrafts.CraftingEntry craftRecipe = orderContext.orderedCrafts().getFirst();
-        List<BigItemStack> itemStacks = orderContext.orderedStacks().stacks();
         Map<Item, BigItemStack> mapping = new HashMap<>();
 
         for (ItemStack itemStack : items) {
